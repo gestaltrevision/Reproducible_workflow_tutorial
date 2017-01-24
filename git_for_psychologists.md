@@ -25,7 +25,7 @@ What's Git?
 
 - Think: revision history/track changes/undo for entire folders
 - aka: "version control system"
-- Stream of snapshots
+- Stream of snapshots, can be played back
 - Keeping record of what has changed (when & who)
 - Time-stamped registration
 - Restoring & branching
@@ -51,11 +51,12 @@ Several ways to use git:
 Initialize your project
 ========================================================
 
-- Rstudio->New project->from new directory-> tick: "create git 
-repository"
+- Rstudio->New project->from new directory-> tick: "create git repository"
 
-*or*:
-- Github -> Repositories -> New
+*or*: 
+- Github -> Repositories -> New 
+    * then in Rstudio: New project -> from version control-> repository url (**Recommended**)
+
 
 (*or*: In project folder: Command: **git init**)
 
@@ -77,19 +78,58 @@ First you code, gather data, write, analyze, plot,...
 
 Then you add files ("staging"): determines what will go into the snapshot.
 
-Rstudio: git tab -> Check boxes
-Command: git add ...
+- Rstudio: git tab -> Check boxes
+- (Command: git add myfile.txt)
 
 Commitment needed
 ============================
 
-Rstudio: git tab -> Commit
-
+- Rstudio: git tab -> Commit
+- (Command: git commit -m "my commit message")
 
 <div style="text-align:center">
 <img src="img/git-staging-area.svg" style="width: 700px;"/>
 </div>
 
+Commitment needed
+============================
+
+- Commit messages:
+
+Not required, but strongly recommended. Be informative (like code comments, [focus on the why](http://chris.beams.io/posts/git-commit/))
+
+- Why two steps? (Not: git commit -a)
+
+Git insists we add files before actually committing anything to allow us to commit our changes in stages and capture changes in logical portions rather than only large batches.
+
+
+Understanding diff & status & log
+===================================
+
+- Rstudio: git tab -> diff
+
+Alternatively: command line
+- git status
+- git log
+- git diff (changes made to a specified file since the most recent commit)
+- git diff *47f748* *09633c* myfile.py
+
+Restoring files
+===================================
+
+Sometimes we want to restore a previous version of a file entirely. 
+
+- git log --oneline
+- git checkout 47f748 word_count.py 
+- Commit to finalize the restore:
+Rather than eliminating the commits that were made, git creates a new commit that changes everything back, ie you can change your mind again. (git never forgets/failsafe)
+
+Push it & pull it
+========================
+
+- No automatic sync for collaborating: constant syncing in real time would be a disaster (for code)
+- Rstudio: git tab -> push (after commiting locally)
+- When collaborating, ie changes have may been pushed by someone else: Rstudio: git tab -> pull (before working locally)
 
 More advantages
 ========================================================
