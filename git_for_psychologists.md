@@ -5,6 +5,7 @@ date: Retreat@Vielsalm
 autosize: true
 
 
+
 A tragedy told in file names
 ====================================
 
@@ -21,8 +22,9 @@ Ultra-definitive-final-rev3-last-THISISTHEONE.docx
 </div>
 
 
+
 For reference
-==============
+==================
 
 ### Tutorials:
 
@@ -35,7 +37,6 @@ For reference
 
 - Ram, K. 2013. [Git can facilitate greater reproducibility and increased transparency in science](http://www.scfbm.org/content/8/1/7). Source Code for Biology and Medicine 8:7.
 - Mascarelli, A. 2014. [Research tools: Jump off the page](http://www.nature.com/naturejobs/science/articles/10.1038/nj7493-523a). Nature jobs 507: 523-525.
-
 
 
 What's Git?
@@ -242,5 +243,6 @@ Thanks
 ============
 
 ## Don't panic: Your code is good enough ;-)
+
 
 
