@@ -74,7 +74,7 @@ Several ways to use git:
 - [Command line](https://try.github.io/levels/1/challenges/1)
 - GUI (e.g. [gitkraken](https://www.gitkraken.com/), [video tutorial](https://www.youtube.com/watch?v=f0y_xCeM1Rk))
 - On [Github](https://www.github.com)
-- **inside Rstudio**
+- **inside Rstudio** (Most accessible)
 
 
 Initialize your project
@@ -85,6 +85,11 @@ Initialize your project
 *or*: 
 - Github -> Repositories -> New 
     * then in Rstudio: New project -> from version control-> repository url (**Recommended**)
+
+
+<div style="text-align:center">
+<img src="img/7_new_project.jpg" style="width: 600px;"/>
+</div>
 
 
 (*or*: In project folder: Command: **git init**)
@@ -117,7 +122,7 @@ Commitment needed
 - *git commit -m "my commit message"*
 
 <div style="text-align:center">
-<img src="img/git-staging-area.svg" style="width: 700px;"/>
+<img src="img/git-committing.png" style="width: 700px;"/>
 </div>
 
 Commitment needed
@@ -163,18 +168,24 @@ Sometimes we want to restore a previous version of a file entirely.
 - Commit to finalize the restore:
 Rather than eliminating the commits that were made, git creates a new commit that changes everything back, ie you can change your mind again. (git never forgets/failsafe)
 
+<div style="text-align:center">
+<img src="img/git-checkout.png" style="width: 700px;"/>
+</div>
+
+
+
 Restoring files
 ===================================
 
 <div style="text-align:center">
-<img src="img/git-checkout.svg" style="width: 700px;"/>
+<img src="img/git-checkout.png" style="width: 700px;"/>
 </div>
 
 Git summary
 ===================================
 
 <div style="text-align:center">
-<img src="img/git_summary.svg" style="width: 700px;"/>
+<img src="img/git_summary.png" style="width: 700px;"/>
 </div>
 
 Push it & pull it
@@ -188,6 +199,11 @@ Command line:
 - *git remote add origin https://github.com/try-git/try_git.git*
 - *git push origin master*
 - *git pull origin master*
+
+
+<div style="text-align:center">
+<img src="img/github-repo-after-first-push.png" style="width: 700px;"/>
+</div>
 
 
 Conflicts & merging
@@ -208,12 +224,37 @@ Cloning, forking, & branching
 - [Branching](https://barbagroup.github.io/essential_skills_RRC/git/branching/#branching-as-a-local-fork) as a local fork to work on a new feature, a new version, to experiment with variants of your code. Can be merged again with the *master* branch (or removed). Can only be used with command line.
 
 
+Branching
+===========
+
+<div style="text-align:center">
+<img src="img/branching1.png" style="width: 700px;"/>
+</div>
+
+
+Branching
+===========
+
+<div style="text-align:center">
+<img src="img/branching1.png" style="width: 700px;"/>
+</div>
+
+Branching
+===========
+
+<div style="text-align:center">
+<img src="img/branching2.png" style="width: 700px;"/>
+</div>
+
+
+
 What to use it for?
 ====================
 
 - All (experiment & analysis) code:
 - [Rmarkdown files](https://github.com/hoenir/Reproducible_workflow_tutorial/blob/master/git_for_psychologists.md) and [Jupyter notebooks](https://github.com/hoenir/MooneyTD_AQ_ASD/blob/master/analysisAdolescentsASD2016.ipynb) will appear in human-readable, pretty format on github.
 - You can use it to backup/share your (behavioral) data and stimuli too. But size limits for non-text files (for very large stimuli or data files, use figshare, Zenodo, OSF).
+- What about manuscripts? Only if in markdown/latex (but no good solution for citations, track changes)
 - [Private github repos](https://education.github.com/pack) means you choose when to make your repo/project public (holds for github and osf)
 
 
@@ -233,7 +274,7 @@ Further tools that connect with git(hub)
     - Two-way sync: edit in OSF, in github (or locally).
     - ! Storage remains in github !
 - Persistent copy needed? [Zenodo](https://guides.github.com/activities/citable-code/) or [figshare](http://ivory.idyll.org/blog/2016-using-zenodo-to-archive-github.html) can archive your github repo (with citable DOI). 
-- Github watching & Forking (take existing project/experiment as basis to start yourself; also on osf)
+- Github watching & Forking (take existing project/experiment as basis to start yourself; also on OSF)
 - Reputation system (for some jobs in the private sector, gtihub account is de facto cv/portfolio)
 - [GestaltReVision repos](https://github.com/gestaltrevision)
 
