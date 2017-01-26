@@ -5,11 +5,12 @@ date: Retreat@Vielsalm
 autosize: true
 
 
+
 A tragedy told in file names
 ====================================
 
 <div style="text-align:center">
-<img src="img/phd052810s.gif" style="width: 600px;"/>
+<img src="img/phd052810s.gif" style="width: 800px;"/>
 </div>
 
 
@@ -17,19 +18,25 @@ Ultra-definitive-final-rev3-last-THISISTHEONE.docx
 ====================================
 
 <div style="text-align:center">
-<img src="img/phd101212s.png" style="width: 400px;"/>
+<img src="img/phd101212s.png" style="width: 800px;"/>
 </div>
+
+
+References
+==============
+
+- Ram, K. 2013. [Git can facilitate greater reproducibility and increased transparency in science](http://www.scfbm.org/content/8/1/7). Source Code for Biology and Medicine 8:7.
+- Mascarelli, A. 2014. [Research tools: Jump off the page](http://www.nature.com/naturejobs/science/articles/10.1038/nj7493-523a). Nature jobs 507: 523-525.
+
 
 What's Git?
 ========================================================
 
 - Think: revision history/track changes/undo for entire folders
 - aka: "version control system"
-- Stream of snapshots, can be played back
+- Stream of snapshots, can be played back (the story of your project)
 - Keeping record of what has changed (when & who)
-- Time-stamped registration
-- Restoring & branching
-- For collaboration but also useful for the lone coder
+- Useful for the lone coder, excellent for collaboration
 
 Plain text is king
 ====================================
@@ -37,7 +44,18 @@ Plain text is king
 - Developed for software development: code
 - But also: data, analysis code, reports, manuscripts 
 - Works on anything that is plain text (.csv,.py,.html,.md,...)
-- Tools do not work on docx, image, pdf files ([pandoc](pandoc.org))
+- Tools do not work on docx, image, pdf files ([pandoc](https://www.pandoc.org))
+
+
+Installing Git
+======================
+
+- [Download here](https://git-scm.com/downloads) (Mac & Win)
+- Open a command line
+- Set up your git email by typing *git config --global user.email YOUR_EMAIL*
+- Set up your git name by typing *git config --global user.name YOUR_NAME*
+- Create a [Github account](https://github.com/join). Use the same email you used to configure git.
+
 
 Git cracking
 ========================================================
@@ -45,8 +63,9 @@ Git cracking
 Several ways to use git: 
 - [Command line](https://try.github.io/levels/1/challenges/1)
 - GUI (e.g. [gitkraken](https://www.gitkraken.com/))
-- On [Github](github.com)
+- On [Github](https://www.github.com)
 - *inside Rstudio*
+
 
 Initialize your project
 ========================================================
@@ -67,7 +86,7 @@ Your new repository ("repo")
 Automatically creates:
 
 - *.git*-folder where your version history lives
-- *.gitignore*-file lists filetypes that should be ignored
+- *.gitignore*-file lists filetypes that should be ignored (eg backup files created by our editor or intermediate files created during data analysis) 
 - Optional: a *README* file
 - Optional: a *LICENSE* file
 
@@ -79,13 +98,13 @@ First you code, gather data, write, analyze, plot,...
 Then you add files ("staging"): determines what will go into the snapshot.
 
 - Rstudio: git tab -> Check boxes
-- (Command: git add myfile.txt)
+- *git add myfile.txt*
 
 Commitment needed
 ============================
 
 - Rstudio: git tab -> Commit
-- (Command: git commit -m "my commit message")
+- *git commit -m "my commit message"*
 
 <div style="text-align:center">
 <img src="img/git-staging-area.svg" style="width: 700px;"/>
@@ -100,29 +119,53 @@ Not required, but strongly recommended. Be informative (like code comments, [foc
 
 - Why two steps? (Not: git commit -a)
 
-Git insists we add files before actually committing anything to allow us to commit our changes in stages and capture changes in logical portions rather than only large batches.
+Git insists we add files explicitly before committing to allow us to commit our changes in stages and capture changes in logical portions rather than only large batches.
+
+When to commit?
+============================
+
+* Do it at least daily (if you have worked on the project)
+* Better: more frequently (logical chunk): 
+    - I finished building this functionality or fixed this bug,     
+    - I added this section/analysis/figure (cf. sensible commit message).
+    - I finished testing a (batch of) participant(s). 
+    - When going from pilot to actual, etc.
 
 
-Understanding diff & status & log
+Understanding diff & status, & log
 ===================================
 
 - Rstudio: git tab -> diff
 
-Alternatively: command line
-- git status
-- git log
-- git diff (changes made to a specified file since the most recent commit)
-- git diff *47f748* *09633c* myfile.py
+Command line:
+- *git status*
+- *git log*
+- *git diff* (changes made to a specified file since the most recent commit)
+- *git diff 47f748 09633c myfile.py*
 
-Restoring files
+Restoring files aka time travel!
 ===================================
 
 Sometimes we want to restore a previous version of a file entirely. 
 
-- git log --oneline
-- git checkout 47f748 word_count.py 
+- *git log --oneline*
+- *git checkout 47f748 word_count.py* (use commit nb of the state before the change we’re trying to undo)
 - Commit to finalize the restore:
 Rather than eliminating the commits that were made, git creates a new commit that changes everything back, ie you can change your mind again. (git never forgets/failsafe)
+
+Restoring files
+===================================
+
+<div style="text-align:center">
+<img src="img/git-checkout.svg" style="width: 700px;"/>
+</div>
+
+Git summary
+===================================
+
+<div style="text-align:center">
+<img src="img/git_summary.svg" style="width: 700px;"/>
+</div>
 
 Push it & pull it
 ========================
@@ -131,7 +174,62 @@ Push it & pull it
 - Rstudio: git tab -> push (after commiting locally)
 - When collaborating, ie changes have may been pushed by someone else: Rstudio: git tab -> pull (before working locally)
 
+Command line: 
+- *git remote add origin https://github.com/try-git/try_git.git*
+- *git push origin master*
+- *git pull origin master*
+
+
+Conflicts & merging
+=====================
+
+But what happens if we make a commit in both places?
+
+Example: change the README on github repo (you can edit files directly in Github)
+Example: change in same line
+
+
+Cloning, forking, & branching
+=============================
+
+- Clone: download local copy of existing repo (cannot push to origin)
+- Fork ([example](https://github.com/hoenir/hoenir.github.io)): copy of existing repo under your account (keeps the link)
+    - pull requests on github
+- [Branching](https://barbagroup.github.io/essential_skills_RRC/git/branching/#branching-as-a-local-fork) as a local fork to work on a new feature, a new version, to experiment with variants of your code. Can be merged again with the *master* branch (or removed). Can only be used with command line.
+
+
+What to use it for?
+====================
+
+- All (experiment & analysis) code:
+- [Rmarkdown files](https://github.com/hoenir/Reproducible_workflow_tutorial/blob/master/git_for_psychologists.md) and [Jupyter notebooks](https://github.com/hoenir/MooneyTD_AQ_ASD/blob/master/analysisAdolescentsASD2016.ipynb) will appear in human-readable, pretty format on github.
+- You can use it to backup/share your (behavioral) data and stimuli too. But size limits for non-text files (for very large stimuli or data files, use figshare, Zenodo, OSF).
+- [Private github repos](https://education.github.com/pack) means you choose when to make your repo/project public (holds for github and osf)
+
+
 More advantages
 ========================================================
 
 - Integrity of each commit is checked (safety against file corruption) with checksums (hash values of content=names in git db)
+- Backup on another computer (safer & better ordered than dropbox, cf code conflicts)
+- Collaboration (one common repo on github): better conflict management
+- Commits helps you tell the story of your project to other people (reproducibility)
+- Time-stamped (pre)registration of state of steps in your project (if you commit, of course)
+
+Further tools that connect with git(hub)
+========================================================
+
+- Github-[OSF integration](https://osf.io/4e7hr/): 
+    - Two-way sync: edit in OSF, in github (or locally).
+    - ! Storage remains in github !
+- Persistent copy needed? [Zenodo](https://guides.github.com/activities/citable-code/) or [figshare](http://ivory.idyll.org/blog/2016-using-zenodo-to-archive-github.html) can archive your github repo (with citable DOI). 
+- Github watching & Forking (take existing project/experiment as basis to start yourself; also on osf)
+- Reputation system (for some jobs in the private sector, gtihub account is de facto cv/portfolio)
+- [GestaltReVision repos](https://github.com/gestaltrevision)
+
+
+
+Thanks
+============
+
+*Remember: Your code is good enough ;-)*
