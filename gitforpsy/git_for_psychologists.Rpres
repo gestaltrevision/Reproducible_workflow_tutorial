@@ -5,6 +5,10 @@ date: Retreat@Vielsalm
 autosize: true
 
 
+<div style="text-align:center">
+<img src="img/Git-logo.png" style="width: 600px;"/>
+</div>
+
 
 A tragedy told in file names
 ====================================
@@ -173,7 +177,6 @@ Rather than eliminating the commits that were made, git creates a new commit tha
 </div>
 
 
-
 Restoring files
 ===================================
 
@@ -236,16 +239,8 @@ Branching
 ===========
 
 <div style="text-align:center">
-<img src="img/branching1.png" style="width: 700px;"/>
+<img src="img/branching2.png" style="width: 800px;"/>
 </div>
-
-Branching
-===========
-
-<div style="text-align:center">
-<img src="img/branching2.png" style="width: 700px;"/>
-</div>
-
 
 
 What to use it for?
