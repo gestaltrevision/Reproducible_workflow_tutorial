@@ -65,7 +65,7 @@ Installing Git
 ======================
 
 - [Download here](https://git-scm.com/downloads) (Mac & Win)
-- Open a command line
+- Open a command line (Rstudio->Git->More->shell)
 - Set up your git email by typing *git config --global user.email YOUR_EMAIL*
 - Set up your git name by typing *git config --global user.name YOUR_NAME*
 - Create a [Github account](https://github.com/join). Use the same email you used to configure git.
