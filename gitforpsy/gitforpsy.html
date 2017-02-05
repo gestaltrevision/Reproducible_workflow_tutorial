@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Git for psychologists</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sander" />
+    <link href="libs/remark-css/example.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Git for psychologists
+### Sander
+### Retreat 2017 <span class="citation">@Vielsalm</span>
+
+---
+
+background-image: url('img/phd052810s.gif')
+class: bottom, center
+
+# A tragedy told in file names
+
+
+---
+background-image: url('img/phd101212s.png')
+class: bottom, center
+
+---
+
+# For reference
+
+
+### Tutorials:
+
+- [Version Control with Git for scientists](http://swcarpentry.github.io/git-novice/) (*Excellent*)
+- [Essential skills for reproducible research computing](https://barbagroup.github.io/essential_skills_RRC/git/git/)
+- [Git for Scientists: A Tutorial](http://nyuccl.org/pages/gittutorial/)
+
+
+### Publications:
+
+- Ram, K. 2013. [Git can facilitate greater reproducibility and increased transparency in science](http://www.scfbm.org/content/8/1/7). Source Code for Biology and Medicine 8:7.
+- Mascarelli, A. 2014. [Research tools: Jump off the page](http://www.nature.com/naturejobs/science/articles/10.1038/nj7493-523a). Nature jobs 507: 523-525.
+
+
+---
+background-image: url('img/Git-logo.png')
+background-size: 700px
+background-position: 20% 100%
+
+
+# What's Git?
+
+- Think: revision history/track changes/undo for entire folders
+
+--
+
+- aka: "version control system"
+
+--
+
+- Stream of snapshots, can be played back (the story of your project)
+
+--
+
+- Keeping record of what has changed (when &amp; who)
+
+--
+
+- Useful for the lone coder, excellent for collaboration
+
+
+---
+background-image: url('img/lorem_ipsum.png')
+background-size: contain
+background-position: 20% 100%
+
+
+# Plain text is king
+
+- Developed for software development: code
+
+--
+
+- But also: data, analysis code, reports, manuscripts 
+
+--
+
+- Works on anything that is plain text (.csv,.py,.html,.md,...)
+
+--
+
+- Tools do not work on docx, image, pdf files ([pandoc](https://www.pandoc.org))
+
+
+---
+background-image: url('img/githublogo.png')
+background-position: 50% 70%
+
+# Installing Git
+
+- [Download here](https://git-scm.com/downloads) (Mac &amp; Win)
+
+
+- Open a command line (Rstudio -&gt; Git -&gt; More -&gt; shell)
+- Set up your git email by typing *git config --global user.email YOUR_EMAIL*
+- Set up your git name by typing *git config --global user.name YOUR_NAME*
+- Create a [Github account](https://github.com/join). Use the same email you used to configure git.
+
+
+---
+background-image: url('img/crack.png')
+background-size: contain
+
+# Git cracking
+
+Several ways to use git: 
+
+- [Command line](https://try.github.io/levels/1/challenges/1)
+
+- GUI (e.g. [gitkraken](https://www.gitkraken.com/), [video tutorial](https://www.youtube.com/watch?v=f0y_xCeM1Rk))
+
+- On [Github](https://www.github.com)
+
+--
+
+- **inside Rstudio** (Most accessible)
+
+---
+
+# Initialize your project
+
+
+.pull-left[
+
+- Rstudio -&gt; New project -&gt; from new directory -&gt; tick: "create git repository"
+
+*or*: 
+
+- Github -&gt; Repositories -&gt; New 
+    * then in Rstudio: New project -&gt; from version control-&gt; repository url (**Recommended**)
+    
+(*or*: In project folder: Command: **git init**)
+]
+.pull-right[![Right-aligned image](img/7_new_project.jpg)]
+
+---
+# Your new repository ("repo")
+
+Automatically creates:
+
+- *.git*-folder where your version history lives
+
+--
+
+- *.gitignore*-file lists filetypes that should be ignored (eg backup files created by our editor or intermediate files created during data analysis) 
+
+--
+
+- Optional: a *README* file (through github)
+
+--
+
+- Optional: a *LICENSE* file (through github)
+
+---
+
+# Your git workflow
+
+First you code, gather data, write, analyze, plot,...
+
+Then you add files (**"staging"**): *determines what will go into the snapshot.*
+
+- Rstudio: git tab -&gt; Check boxes
+- *git add myfile.txt*
+
+---
+
+# Commitment needed
+
+
+- Rstudio: git tab `\(\to\)` Commit
+- *git commit -m "my commit message"*
+
+![image](img/git-committing.png)
+
+
+---
+
+# Commitment needed
+
+- Commit messages:
+
+Not required, but strongly recommended. Be informative (like code comments, [focus on the why](http://chris.beams.io/posts/git-commit/))
+
+--
+
+- Why two steps? (Not: *git commit -a*)
+
+Git insists we add files explicitly before committing to allow us to commit our changes in stages and capture changes in logical portions rather than only large batches.
+
+---
+background-image: url('img/git-commit.png')
+background-size: 300px
+background-position: 50% 80%
+
+# When to commit?
+
+- At least daily (if you have worked on the project)
+
+- But better: more frequently (logical chunks): 
+    - I finished building this functionality or fixed this bug,   
+    
+    - I added this section/analysis/figure (cf. sensible commit message).
+    
+    - I finished testing a (batch of) participant(s). 
+    
+    - When going from pilot to actual, etc.
+
+---
+
+
+# Understanding diff &amp; status, &amp; log
+
+- Rstudio: git tab `\(\to\)` diff
+
+Command line:
+- *git status* (where are you in your project)
+
+- *git log* (overview of all commits)
+
+- *git diff* (changes made to a repo since the most recent commit)
+
+- *git diff 47f748 09633c myfile.py* (changes between two commits for myfile)
+
+---
+background-image: url('img/git-checkout.png')
+background-size: 500px
+background-position: 50% 100%
+
+# Restoring files aka time travel!
+
+Sometimes we want to restore a previous version of a file entirely. 
+
+--
+
+- *git log --oneline*
+
+--
+
+- *git checkout 47f748 word_count.py* (use commit nb of the state before the change we’re trying to undo)
+
+--
+
+- Commit to finalize the restore:
+Rather than eliminating the commits that were made, git creates a new commit that changes everything back, ie you can change your mind again. (git never forgets/failsafe)
+
+---
+background-image: url('img/git_summary.png')
+background-size: 700px
+background-position: 50% 50%
+class: reverse, bottom, right
+
+# Git summary
+
+---
+
+# Push it &amp; pull it
+
+.pull-left[
+- No automatic sync for collaborating (for code constant syncing in real time would be a disaster)
+- Rstudio: git tab `\(\to\)` push (after commiting locally)
+- When collaborating, ie changes have may been pushed by someone else: Rstudio: git tab `\(\to\)` pull (before working locally)
+
+Command line: 
+- *git remote add origin https://github.com/try-git/try_git.git*
+- *git push origin master*
+- *git pull origin master*
+]
+
+.pull-right[
+![image](img/github-repo-after-first-push.png)
+]
+
+---
+
+# Conflicts &amp; merging
+
+But what happens if we make a commit in both places?
+
+- Try it: change the README on github repo (*btw: you can edit files directly in Github*). Push will be rejected `\(\to\)`  do a pull &amp; auto-merge first. However: If change in same line/file: 
+
+```
+[...]
+From https://github.com/vlad/planets
+ branch            master     -&gt; FETCH_HEAD
+Auto-merging mars.txt
+* CONFLICT (content): Merge conflict in mars.txt
+* Automatic merge failed; fix conflicts and then commit the result.
+[...]
+```
+  
+--
+
+
+```
+[...] The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+* &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+We added a different line in the other copy
+* =======
+This line added to Wolfman's copy
+* &gt;&gt;&gt;&gt;&gt;&gt;&gt; dabb4c8c450e8475aee9b14b4383acc99f42af1d
+[...]
+```
+
+---
+
+# Cloning, forking, &amp; branching
+
+- Clone: download local copy of existing repo (cannot push to origin)
+
+- Fork ([example](https://github.com/hoenir/hoenir.github.io)): copy of existing repo under your account. Keeps the link between projects `\(\to\)` *pull requests* on github
+    
+--
+
+- [Branching](https://barbagroup.github.io/essential_skills_RRC/git/branching/#branching-as-a-local-fork) as a local fork to work on a new feature, a new version, to experiment with variants of your code. Can be merged again with the *master* branch (or removed). Can only be used with command line.
+
+![image](img/branching1.png)
+
+
+---
+background-image: url('img/branching2.png')
+background-size: 800px
+background-position: 50% 50%
+
+# Branching
+
+---
+
+# What to use it for?
+
+- All code:
+
+  - R or python analysis: [R Markdown files](https://github.com/hoenir/Reproducible_workflow_tutorial/blob/master/git_for_psychologists.md) and [Jupyter notebooks](https://github.com/hoenir/MooneyTD_AQ_ASD/blob/master/analysisAdolescentsASD2016.ipynb) will appear in human-readable, pretty format on github.
+  - Your experiment code 
+
+--
+
+- You can use it to backup/share your (behavioral) data and stimuli too. But size limits for non-text files (for very large stimuli or data files, use figshare, Zenodo, OSF).
+
+--
+
+- What about manuscripts? Only if in markdown/latex (but no good solution for citations, track changes)
+
+--
+
+- [Private github repos](https://education.github.com/pack) means you choose when to make your repo/project public (holds for github and osf)
+
+---
+
+# More advantages
+
+- Integrity of each commit is checked (safety against file corruption) with checksums (hash values of content=names in git db)
+
+- Backup on another computer (safer &amp; better ordered than dropbox, cf code conflicts)
+
+- Collaboration (one common repo on github): better conflict management
+
+- Commits helps you tell the story of your project to other people (reproducibility)
+
+- Time-stamped (pre)registration of state of steps in your project (if you commit, of course)
+
+---
+
+# Further tools that connect with git(hub)
+
+- Github-[OSF integration](https://osf.io/4e7hr/): 
+
+    - Two-way sync: edit in OSF, in github (or locally).
+    - Storage **remains** in github 
+    
+--
+    
+- Persistent copy needed? [Zenodo](https://guides.github.com/activities/citable-code/) or [figshare](http://ivory.idyll.org/blog/2016-using-zenodo-to-archive-github.html) can archive your github repo (with citable DOI). 
+
+--
+
+- Github watching &amp; forking (take existing project/experiment as basis to start yourself; also on OSF)
+
+- Reputation system (for some jobs in the private sector, gtihub account is de facto cv/portfolio)
+
+- [GestaltReVision repos](https://github.com/gestaltrevision)
+
+
+---
+background-image: url('img/prog.jpg')
+background-size: 500px
+background-position: 50% 10%
+class: bottom, right
+
+# Thanks!
+
+Don't panic: Your code is good enough ;-)
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('showSlide', function (slide) {setTimeout(function() {window.dispatchEvent(new Event('resize'));}, 100)});</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
