@@ -1,0 +1,169 @@
+---
+title: "Elements of Reproducibility"
+subtitle: "Introduction, history & current solutions"
+author: "Pieter Moors"
+date: "07/02/2017"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# Aim of the session  
+
+- Introduce reproducibility or replication crisis
+- Provide some history and context
+- Discuss current solutions to improve lack of reproducibility
+- Provide alternative/complementary views that touch upon deeper issues regarding reproducibility 
+---
+
+class: center, middle
+
+# Replication crisis?
+# Reproducibility crisis?
+
+---
+
+# Wikipedia
+
+> The replication crisis refers to a methodological crisis in science in which scientists have found that the results of many 
+> scientific experiments are difficult or impossible to replicate on subsequent investigation, either by independent researchers
+> or by the original researchers themselves. While the crisis has **long-standing roots**, the phrase was coined in **the early 
+> 2010s** as part of a growing awareness of the problem.
+
+---
+
+# Wagenmakers & Pashler (2012)
+
+Is there currently a crisis of confidence in psychological science reflecting an unprecedented level of doubt among practitioners about the reliability of research findings in the field? It would certainly appear that there is. These doubts emerged and grew as a series of unhappy events unfolded in 2011: 
+
+- The Diederik Stapel fraud case
+--
+
+- The publication in a major social psychology journal of an article purporting to show evidence of extrasensory perception (Bem, 2011)
+--
+
+- Reports by Wicherts and colleagues that psychologists are often unwilling or unable to share their published data for reanalysis
+--
+
+- The publication of an important article in Psychological Science showing how easily researchers can, in the absence of any real effects, nonetheless obtain statistically significant differences through various questionable research practices (QRPs) (Simmons, Nelson, & Simonsohn, 2011).
+
+---
+
+# Hell breaks loose
+
+- Greg Francis publishes a series of papers on whether a series of reported experiments is "too good to be true"
+- Button et al. (2013) publish “Power failure: Why small sample size undermines the reliability of neuroscience"
+- Replication failures of high-profile papers start getting published: 
+  - Power posing will make you bolder (Amy Cuddy)
+  - Smiling will make you feel happier (Fritz Strack)
+  - Self-control is a limited resource (Roy Baumeister)
+  - Revising after your exams can improve your earlier performance (Daryl Bem)
+  - Exposure to words pertaining to ageing will make you walk more slowly (Jon Bargh)
+  - Cleaning your hands will wash away your guilt (Simone Schnall)
+  - ...
+
+---
+
+# Backlash
+
+- Replication bullies
+- False positive police
+- Replication police
+- Data detectives
+- Methodological terrorists 
+- Data parasites
+- Shameless little bullies
+- Self-righteous, self-appointed sheriffs
+- "Second stringers” who are incapable of making novel contributions of their own to the literature
+- "Flair"
+- "On the emptiness of failed replications"
+
+---
+
+# Flair (Baumeister 2016)? 
+
+(...) competence may matter less than in the past. Getting a significant result with n = 10 often required having an intuitive flair for how to set up the most conducive situation and produce a highly impactful procedure. **Flair**, intuition, and related skills matter much less with n = 50.
+
+(...) one effect of the replication crisis can even be seen as **rewarding incompetence**. These days, many journals make a point of publishing replication studies, especially failures to replicate. (...) But in that process, we have created a **career niche for bad experimenters**. This is an underappreciated fact about the current push for publishing failed replications. I submit that some experimenters are incompetent. In the past their careers would have stalled and failed. But today, a broadly incompetent experimenter can amass a series of impressive publications simply by failing to replicate other work and thereby publishing a series of papers that will achieve little beyond undermining our field’s ability to claim that it has accomplished anything.
+
+---
+
+# The old vs. the new 
+
+Interesting divides: 
+  - Established vs. early career scientists 
+  - Fast communication on social media (Facebook & Twitter) and blogs vs. slow communication through peer-reviewed journals
+  - Creativity versus accuracy 
+  - Novel, unexpected, and exciting vs. Safe, unsurprising, and boring (often small N vs. large N)
+
+---
+class: center, middle, inverse
+
+# All of this is NOT NEW
+
+[Historical overview](https://psyborgs.github.io/projects/replication-in-psychology/)
+
+---
+
+# Crisis in Psychology 
+
+Psychology appears to have been in crisis before: 
+
+  - Die krisis in der psychologie (Willy, 1899)
+  - La crise de la psychologie expérimentale (Kostyleff, 1911)
+  - The crisis in psychology (Driesch, 1925) 
+  - Zur krise der psychologie (Koffka, 1926)
+  - Die krise der psychologie (Buhler, 1926)
+  
+  - Semi-permanent state of crisis for social psychology (1960s to 1980s)
+  
+  - Current crises of psychology (Westland, 1978) documents 9 different crises 
+  
+  - 1995 symposium "Is there a crisis in psychology?"
+
+---
+
+# Replication reports
+
+- Published failed replications 
+- Controversies surrounding findings 
+- Asking for a replication section in journals
+- The information explosion (Loevinger) 
+- Information exchange: A radical proposal (Herron)
+
+---
+
+# Replication controversies 
+---
+# NHST critique
+---
+# Current solutions 
+
+- Protecting against cognitive biases 
+- Improving methodological training
+- Data sharing 
+- Implementing independent methodological support
+- Encouraging collaboration and team science
+- Promoting study pre-registration
+- Improving the quality of reporting
+- Diversifying peer review
+- Increase informational value of studies (power, sequential analysis, p-curve)
+
+---
+# Implementations 
+
+- [Curate Science](http://www.curatescience.org)
+- [Commitment to Research Transparency and Open Science](http://www.researchtransparency.org/)
+- [Peer Reviewers Oppenness Initiative](https://opennessinitiative.org/)
+- [AsPredicted.org](https://aspredicted.org/)
+- [Open Science Framework](https://osf.io/)
+- [PsyArxiv](https://osf.io/preprints/psyarxiv/)
+- [StatCheck](http://statcheck.io/)
+- [p-curve](http://www.p-curve.com/)

@@ -1,0 +1,76 @@
+---
+title: "R Markdown Tutorial"
+author: "Pieter Moors"
+date: "09/02/2017"
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Three types of content 
+
+- YAML header (optional)
+- R code chunks 
+- Plain text with text formatting
+
+# Notebook interface 
+
+This means that each code chunk can be run. 
+
+```{r}
+
+n_subj <- 20 
+n_trial <- 100 
+n_cond <- 4
+
+plot(seq(1,11), abs(seq(-5,5)))
+```
+
+# Rendering output
+
+The easiest way is to press the knit button. What happens when you do this? 
+
+![](http://rmarkdown.rstudio.com/lesson-images/RMarkdownFlow.png) 
+
+# Chunks, local and global chunk options 
+
+```{r, echo=T, eval=F, message=F}
+
+```
+
+# Inline code 
+
+Inline code is great. You can use it to dynamically update the contents of your report. 
+For example, our data set contains `r n_subj ` participants, `r n_cond ` conditions, and `r n_trial ` trials. 
+
+# I can also do python 
+
+```{python}
+
+x = 'hello, python world!'
+print(x.split(' '))
+```
+
+# Markdown formatting 
+
+## Different levels of headers 
+
+### This goes down to level 6
+
+- *italics* 
+- **bold** 
+- `code`
+- ~~strikethrough~~
+- superscript^2^ and subscript~2~
+- [this is a link and a footnote](http://www.gestaltrevision.be)[^1]
+- Latex equations, $S = k * log(R)$ 
+- Bibliographies (advanced, I never used it before)
+
+[^1]: Please click the link
+
+# Some cool examples 
+
+Go to gallery at R Markdown website. 
