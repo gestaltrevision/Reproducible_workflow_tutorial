@@ -1,8 +1,8 @@
 ---
 title: "(Re)appraisal of theory in psychology"
-subtitle: ""
+subtitle: "<sub>(may contain traces of alternative facts)</sub>"
 author: "Sander"
-date: "Retreat 2017"
+date: "Retreat 2017 @Vielsalm"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -11,11 +11,30 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 
+
+---
+# Take-home messages
+
+
+- There are things in the way we do psychological research that more subjects (higher power), (pre)registrations or a bayesian analysis instead of a conventional p-value test cannot solve. No statistical analysis can be better than the design of a study, and no research design can be better than the rationale of the underlying theory (Fiedler).
+
+- Fiddling with data analysis procedures (as happens in "p-hacking") and with theory (adhockery and HARKing) is what science is about. We should be careful not to stifle discovery when we (justly) require stringency in hypothesis testing and at the same time perpetuate a (publication) bias against exploratory research.
+
+- We should be not to collate over units (time, space, individuals, trials, stimuli...) that aren't alike. This hides actual patterns and worse: deludes us with interference patterns (artifacts). These patterns will fluctuate with minor changes in the experimental details and with the way you slice the data (low reproducibility).
+
+- Our aim is not to discredit procedural efforts to increase reproducibility, but to broaden the discussion of fundamental causes of low reproducibility. A more balanced critique will hopefully facilitate the adoption of ways to improve reproducibility from research inspiration to research communication.
+
+
 ---
 background-image: url('img/researchCycle.jpg')
 background-size: 700px
+background-position: 50% 70%
 
 # Reproducibility crisis
+
+???
+Meehl mixed blessing, awe? Paralyzing & energizing. Nowadays, hope you don’t leave the field more cluttered than when you arrived.
+
 
 ---
 
@@ -30,16 +49,24 @@ Why?
 
 --
 
-Bad theories (or logic) lead to "tests" that are at best uninformative and at worst deceiving. 
+Weak theories (or bad logic) lead to "tests" that are at best uninformative and at worst deceiving. 
 
 - Failure in (conceptual) replications
 - Non-cumulative
 
+???
+Correspondence. Not Kuhn: Observation is determined by the data of the world, but what we can observe is determined by how we probe it, by our model (cf Jan: plots of sherlock). 
+
+
 ---
+background-image: url('img/paulmeehl.jpg')
+background-position: 100% 0%
+background-size: 180px
 
 # Problems with traditional testing logic
 
 - Traditional falsification: 
+
     - in physics: point prediction, significance is falsification
     - but in psychology, null is rejected, not theory of interest -> corroboration
 --
@@ -74,57 +101,79 @@ Cn is a statement about experimentally realized conditions (particulars).
 So when we write our conclusions we need to make all these assumptions plausible.
 
 ---
-# Auxiliary theory in more complex in psy
+# Auxiliary theory is more complex in psy
 
 - The task theory (e.g. different strategies for doing task, often implicit)
 
 --
 
-- T & aux. not easily disentangled
+- T & aux. T not easily disentangled
 
 --
 
-- Levels, aux. from different disciplines
+- Levels, aux. T from different disciplines
 
 --
 
 - Observation/measurement theory 
     - cf. risk in method instead of in theory test. Waw, did they get this to work, instead of: great corroboration of this clever theory.
+
 ---
+background-image: url('img/coincidence.jpg')
+background-position: 100% 100%
+background-size: 400px
 
 # Strength of corroboration
 
 - ~Risky test: on some basis (prior experience, other theory, or common knowledge and intuition), absent the theory T, we see no reason for thinking that $O_{2}$ has a high probability conditional upon $O_{1}$. 
-- $O_{2}$ refers to a point value, or narrow numerical interval, selected from a wide range of otherwise conceivable values. Being specific or precise (restrictive as to what variability can’t be perceived).
-- Since all our theories are incomplete and literally false (even if T may not be literally false): focus on verisimilitude (instead of falsification):  approaching truth better, better than alternatives (degree). Theory builds up credit through predicting **"damn strange coincidences"** (cf. "accidentalness")
+
+--
+
+    - Obvious way ensure probability is low: $O_{2}$ refers to a point value, or narrow numerical interval, selected from a wide range of otherwise conceivable values. (nearly impossible in psy)
+    - A distinct *pattern of predictions*. Being specific or precise (restrictive as to what variability can’t be perceived).
+
+--
+
+- All our theories are incomplete and literally false (even if T may not be literally false): focus on verisimilitude (instead of falsification):  approaching truth better, better than alternatives (degree). 
+- Theory builds up credit through predicting **"damn strange coincidences"** (cf. "accidentalness")
 
 ???
 - HIPPEA: finding a deficit in a task that is also more difficult?
 -  HIPPEA (explanation of directed difference in some task) vs classical (description of directed difference direction, across all tasks). Specificity/precision, but still weak: no point value, no curve (though there are predictions of dynamics you could make)
-
+- being commital
 
 ---
 
+background-image: url('img/band-aid.jpg')
+background-size: 280px
+background-position: 50% 90%
+
+
 # Theoretical defense against falsification
+
 
 An apparent  falsifier  fended off by **"adhockery"**: 
 - by challenging  the  other assumptions,  
 - by  adding  an  additional  entity  or  theory ("patch"),  
 - by challenging the ceteris  paribus clause.
 
-## When legitimate, how, & for how long?
+--
 
-*Adhockery, like procedural fiddling, is not bad in itself. Indeed it is what science is.*
+*Adhockery, like procedural fiddling, is not bad in itself. Indeed it is what science is about.*
 
-(HARKING, like p-hacking, is only a problem in conventional null-hypothesis testing environment.) 
+HARKING, like p-hacking, is only a problem in conventional null-hypothesis testing environment.
+
+### When legitimate, how, & for how long?
 
 ---
+background-image: url('img/lakatos1.jpeg')
+background-size: cover
 
 # Progressive vs degenerative research programme (Lakatos)
 
- 
+### Adhockery quality:
 - Does it have unity within the coherent framework or research tradition?  (inspired by important theoretical principles vs alien element pasted on)
-- Does it predict or forbid sth new? (greater explanatory/predictive power? vs just-so)
+- Does it predict or forbid something new? (greater explanatory/predictive power? vs *just-so*)
 
 cf. Moderator issue in failures to replicate: More serious task.
 
@@ -133,42 +182,130 @@ cf. Moderator issue in failures to replicate: More serious task.
 - The difference between a progressive and a degenerative research programme.
 
 ---
-# Theoretical ideas are really frail (but dichotomies last forever)
+background-image: url('img/guts.jpg')
+background-size: 180px
+background-position: 100% 100%
+
+# Theoretical ideas are really frail...
 
 - The extend we should defend by (the good kind of) ad hoc adjustments depends on the credit accumulated
-- But sometimes: pays to continue anyway (always with explicit acknowledgement that there isn’t much credit 
-- Scientist’s "intuition" (irrational but important): 
-    - best case: it will be articulated eventually. 
-    - Worst case: sticking with pet theory till death. But this guy will become very proficient in undermining competitive accounts (adversarial research!)
-
-
-- Prefer  theories that  imply  qualitatively  diverse  facts.
-- Simplicity/parsimony (but why?)
-- **Convergence**
-
-Goes against current research climate
-  - Easier to churn out a steady stream of publications based on variants of the same task, and a thin task (paradigm-dependent) theory.
-  - Paradigm becomes target instead of tool, replaces original hypotheses and shapes new task-specific hyptheses
-  - (field-specific) dichotomies allow infinite back and forth
-
-Traditions become isolated & not cumulative, theories tailored to paradigm, confusing empirical effects with theory-driven research questions and overlooking similar findings from other paradigms and more integrative theoretical frameworks with a broader range of applicability and testability.
-
-???
-Ultimately: we don’t know what leads to best progress in psy (probably combi, interaction). But we need to take heed that there are not evenly compatible with the current scientific climate.
-Metatheory  should  be conducted  by  random  sampling  of  episodes  in  the  history  of  science, applying  formal  statistical  and  psychometric  methods  to  analyze  the results.
-
----
-
-# (Mechanistic) explanation
-
-> *A mechanism is a structure performing a function in virtue of its component parts, component operations, and their organization. The orchestrated functioning of the mechanism, manifested in patterns of change over time in properties of its parts and operations, is responsible for one or more phenomena of interest.* (Bechtel)
 
 --
 
-#### It should render the phenomonon intelligible in terms of processes that we (can hope to) understand better than the phenomena we are seeking to explain.
+- But sometimes: pays to continue anyway ("always with explicit acknowledgement that there isn’t much credit") 
+
+--
+
+- Scientist’s "intuition" (irrational but important): 
+    - Best case: it will be articulated eventually.
+    - Stays unsubstantiated but works heuristically
+    - Worst case: sticking with pet theory till death. But this guy will become very proficient in undermining competitive accounts (adversarial research!)
+    
+--
+
+- Abstract principles (*GUTs*) are unfalsifiable 
+
+
+---
+background-image: url('img/date.jpg')
+background-size: 180px
+background-position: 90% 100%
+
+# Incomplete, conflicting criteria for theory appraisal:
+
+- Prefer  theories that  imply  qualitatively  diverse  facts (explanatory breadth & depth).
+
+- Simplicity/parsimony (but why?)
+
+- Post-hoc explanation vs prediction of novel facts? (but *“How could the mere date of a fact affect its logical relevance?”* Carnap) 
+- **Convergence**
+
+- ...
+
+???
+- irrationality that we should probably acknowledge instead of pretending this is all solid
+- cf theory of evolution (or 2nd law of thermodyn and ‘so-called’ violations): historicity & implementation
+- but overly flexible in implementation (aux in different levels)? This is where the tests are situated. 
+- How to weigh evidence in theory construction? What is available to the critical scholar is not the fact but some other scientist’s sentence asserting it. (you know that there’s noise in this literature, probably more than we once thought (crisis), but we also have a confirmation bias which means you’re much better in plausible adhockery for your pet theory than for others.
+- Criteria often incompatible. Ideally, retrospective *metatheoretical*  research should  be conducted  by  random  sampling  of  episodes  in  the  history  of  science, applying  formal  statistical  and  psychometric  methods  to  analyze  the results (Meehl).
+
+
+---
+background-image: url('img/island.jpg')
+background-size: cover
+
+# ...but dichotomies last forever
+
+We don’t know what leads to best cumulative progress in psychology: 
+
+- Explorative (but with systematicity)
+- Phenomenon-based/paradigm-based
+- Theoretically-based
+- Computational modelling-based (but same indeterminacy problem)
+
+If other sciences are a measure, a combination, in interaction.
+
+--
+
+But they are not equally compatible with the current scientific climate.
+
+  - Important to articulate task theory, but: paradigm becomes target instead of tool, replaces original hypotheses
+  - Overlooking convergent evidence from other paradigms/traditions
+  - (Field-specific) dichotomies allow infinite back and forth
+
+$\to$ non-cumulative "islands" 
+
+???
+
+- modeling/parameter fitting: assumptions + indeterminacy (demonstrates merely that the architecture is consistent with the behavior being simulated. Too little restrictions).  Changes somewhat if additional constraints (neural states)
+- Easier to churn out a steady stream of publications based on variants of the same task, and a thin task (paradigm-dependent) theory.
+- theories tailored to paradigm, confusing empirical effects with theory-driven research questions and overlooking more integrative theoretical frameworks with a broader range of applicability and testability.
+
+
+---
+background-image: url('img/broken.png')
+background-size: 500px
+background-position: 50% 100%
+
+# What is a (mechanistic) explanation?
+
+> *A mechanism is a structure performing a function in virtue of its component parts, component operations, and their organization. The orchestrated functioning of the mechanism, manifested in patterns of change over time in properties of its parts and operations, is responsible for one or more phenomena of interest.* (**Bechtel**)
+
+--
+
+#### It should render the phenomenon intelligible in terms of processes that we (can hope to) understand better than the phenomena we are seeking to explain.
 
 ???
 High bar which a lot of theories referring to attention, global-local/TOM in ASD (decriptive), dichotomies will not reach. Even reward.
+
+---
+background-image: url('img/mayr.jpg')
+background-size: 140px
+background-position: 50% 100%
+
+# Theoretical concepts are open, underdetermined
+
+- Surplus  meaning  of  theoretical  terms ("global-local", "attention", "prediction")
+- Often only get their meaning implicitly, by their role in the theoretical net  
+- From unobservable concepts (subpersonal level) to observable properties (either at personal, behavioral level or at subpersonal, neural level). Tension in psy theory: the more you "explain" the more aux. theory needed. 
+
+--
+
+#### Radical pluralism & ruthless theoretical hygiene
+
+- Systematic derivation from first principles (cybernetics, biology), well-established logical constraints or empirical laws
+- Some purism/imperialism is not bad in science
+- Teleology and historicity (path-dependence): *Robert Rosen* & *Ernst Mayr*
+
+
+???
+Global-local
+- name refers to effects or process, 
+- As (first order) disposition, instead of capacity to acquire this disposition
+hygiene?
+- PC imperialist in core principles (PEM all the brain does), that is Risky, goes against strong intuitions.
+- cause lies in the future
+
 
 ---
 background-image: url('img/Gadfly1.png')
@@ -179,7 +316,7 @@ background-size: 500px
 *Most psychologists like people, in theory.*
 
 We need more:
-- Rich/”thick” description as an ethnographer (but augmented by sensors and tasks) (*big data*)
+- Rich ("thick") description as an ethnographer (but augmented by sensors and tasks) (*big data*)
 
 --
 
@@ -195,7 +332,12 @@ We need more:
 
 --
 
- $\implies$ To be most forceful in a role as **gadfly** (this doesn’t fit, this is an interesting pattern, that’s not sufficiently explained,...).
+ $\implies$ To be most forceful in a role as **gadfly** ("this doesn’t fit", "this is an interesting pattern", "that’s not sufficiently accounted for", ...).
+ 
+???
+- Much more modest
+- Crisis in psy, bc no progress in psy? Sacrilege?
+
  
 ---
 background-image: url('img/disciplines.png')
@@ -203,6 +345,8 @@ class: bottom, left
 
 # The diplomatic picture
 
+???
+Marrian
 
 ---
 background-image: url('img/horse.jpg')
@@ -210,9 +354,24 @@ class: bottom, left
 
 # No horsing around
 
+???
+somewhat polemically
+
 ---
+background-image: url('img/discdep.png')
+class: bottom, left
+
+# No horsing around
+
+
+???
+not to disparage
+
+---
+
+
 background-image: url('img/doomed.jpg')
-class:right
+class: right, bottom
 
 # Thanks!
 
