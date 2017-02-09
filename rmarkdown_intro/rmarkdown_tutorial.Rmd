@@ -22,7 +22,7 @@ This means that each code chunk can be run.
 
 ```{r}
 
-n_subj <- 20 
+n_subj <- 10 
 n_trial <- 100 
 n_cond <- 4
 
