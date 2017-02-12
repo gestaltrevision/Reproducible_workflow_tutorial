@@ -2,7 +2,7 @@
 
 This is a very short introduction to git. Check out these excellent, more elaborate tutorials if you need more:
 
-- [Version Control with Git for scientists](http://swcarpentry.github.io/git-novice/) (*Excellent*, source of illustrations below)
+- [Version Control with Git for scientists](http://swcarpentry.github.io/git-novice/) (source of illustrations below)
 - [Essential skills for reproducible research computing](https://barbagroup.github.io/essential_skills_RRC/git/git/)
 - [Git for Scientists: A Tutorial](http://nyuccl.org/pages/gittutorial/)
 
