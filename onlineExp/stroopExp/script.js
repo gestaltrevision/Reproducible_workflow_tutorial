@@ -1,3 +1,44 @@
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+// Add this for mTurk - Start
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+const MTURK_SUBMIT = "https://www.mturk.com/mturk/externalSubmit";
+const SANDBOX_SUBMIT = "https://workersandbox.mturk.com/mturk/externalSubmit";
+const DEBUG = false;
+const DEV = isSandbox(); // if sandbox is in the URL, we are in developer (DEV) mode
+
+var config = {};
+var state = {
+    assignmentId: gup("assignmentId"),  // get the asssignmentId out of the URL
+    workerId: gup("workerId"), // get the workerId out of the URL
+};
+var mturkPayload = { // add more keys if you want to send additional data to mTurk servers (e.g, experiment name, blockId, responses, etc.)
+  'assignmentId': state.assignmentId,
+  'workerId': state.workerId,
+  'responses': {}
+};
+
+function gup(name) {
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var tmpURL = window.location.href;
+    console.log(tmpURL);
+    var results = regex.exec(tmpURL);
+    if (results == null) return "external";
+    else return results[1];
+}
+
+function isSandbox() {
+    var tmpURL = window.location.href;
+    return tmpURL.includes("sandbox")
+}
+console.log(state);
+
+// ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+// Add this for mTurk - END
+// ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+
 // Define study
 const study = lab.util.fromObject({
   "messageHandlers": {},
