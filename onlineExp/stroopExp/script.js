@@ -615,7 +615,6 @@ function generateMessage(text) {
 function submitHIT() {
     var submitUrl = DEV ? SANDBOX_SUBMIT : MTURK_SUBMIT;
 
-    clearMessage();
     document.getElementById('submit-button').addClass("loading");
 
     // TO DO: maybe add some sort of validation
