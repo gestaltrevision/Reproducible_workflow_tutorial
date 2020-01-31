@@ -646,3 +646,5 @@ function setupButtons() {
     }
 
 }
+
+setupButtons();
