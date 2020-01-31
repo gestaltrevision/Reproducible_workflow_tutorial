@@ -616,7 +616,7 @@ function submitHIT() {
     console.log("submitting HIT");
     var submitUrl = DEV ? SANDBOX_SUBMIT : MTURK_SUBMIT;
 
-    document.getElementById('submit-button').addClass("loading");
+    document.getElementById('submit-button').classList.add("loading");
 
     // TO DO: maybe add some sort of validation
 
