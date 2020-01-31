@@ -630,9 +630,9 @@ function mturkSubmit(submitUrl) {
     addHiddenField(form, 'workerId', state.workerId);
     addHiddenField(form, 'data', JSON.stringify(mturkPayload));
 
-   document.getElementById("#submit-form").setAttribute("action", submitUrl);
-   document.getElementById("#submit-form").setAttribute("method", "POST");
-   document.getElementById("#submit-form").submit();
+   document.getElementById("submit-form").setAttribute("action", submitUrl);
+   document.getElementById("submit-form").setAttribute("method", "POST");
+   document.getElementById("submit-form").submit();
 
     document.getElementById('submit-button').classList.remove("loading");
     // TO DO: add something to handle submission failures and display an appropriate negative message
