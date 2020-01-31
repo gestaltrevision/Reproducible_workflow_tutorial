@@ -34,6 +34,10 @@ function isSandbox() {
 }
 console.log(state);
 
+if (state.assignmentId == "external") {
+    document.getElementById('submit-button').remove();
+}
+
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 // Add this for mTurk - END
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
@@ -578,7 +582,7 @@ const study = lab.util.fromObject({
       "type": "lab.html.Screen",
       "responses": {},
       "title": "Thanks",
-      "content": "\u003Cheader class=\"content-vertical-center content-horizontal-center\"\u003E\n  \u003Ch1\u003EThank you!\u003C\u002Fh1\u003E\n\u003C\u002Fheader\u003E\n\u003Cmain\u003E\n  \u003Cp\u003E\n    You did a great job, thanks for taking the time!\n  \u003C\u002Fp\u003E\n  \u003Cbutton id=\"submit-button\" type=\"submit\"\u003ESubmit\u003C\u002Fbutton\u003E\n \u003Cp\u003E\nPlease click submit\n  \u003C\u002Fp\u003E\n   \u003C\u002Fmain\u003E\n \u003Cfooter class=\"content-vertical-center content-horizontal-center\"\u003E\n  \u003Cp\u003E\n    If you have any questions or comments about this \n    experiment,\u003Cbr\u003E please be invited to contact\n    \u003Ca href=\"http:\u002F\u002Ffelixhenninger.com\"\u003E\n    Felix Henninger\u003C\u002Fa\u003E.\n  \u003C\u002Fp\u003E\n\u003C\u002Ffooter\u003E\n \u003Cform id=\"submit-form\" name=\"submit-form\"\u003E \u003C\u002Fp\u003E\n ",
+      "content": "\u003Cheader class=\"content-vertical-center content-horizontal-center\"\u003E\n  \u003Ch1\u003EThank you!\u003C\u002Fh1\u003E\n\u003C\u002Fheader\u003E\n\u003Cmain\u003E\n  \u003Cp\u003E\n    You did a great job, thanks for taking the time!\n  \u003C\u002Fp\u003E\n  \u003Cbutton id=\"submit-button\" type=\"submit\" onclick=\"submitHit\"\u003ESubmit\u003C\u002Fbutton\u003E\n \u003Cp\u003E\nPlease click submit\n  \u003C\u002Fp\u003E\n   \u003C\u002Fmain\u003E\n \u003Cfooter class=\"content-vertical-center content-horizontal-center\"\u003E\n  \u003Cp\u003E\n    If you have any questions or comments about this \n    experiment,\u003Cbr\u003E please be invited to contact\n    \u003Ca href=\"http:\u002F\u002Ffelixhenninger.com\"\u003E\n    Felix Henninger\u003C\u002Fa\u003E.\n  \u003C\u002Fp\u003E\n\u003C\u002Ffooter\u003E\n \u003Cform id=\"submit-form\" name=\"submit-form\"\u003E \u003C\u002Fp\u003E\n ",
       "timeout": "10",
       "parameters": {},
       "files": {}
@@ -590,6 +594,8 @@ const study = lab.util.fromObject({
 
 // Let's go!
 study.run()
+
+
 
 // button functionality
 
@@ -638,14 +644,3 @@ function mturkSubmit(submitUrl) {
 
 
 
-function setupButtons() {
-
-    document.getElementById('submit-button').onclick= submitHIT;
-    if (state.assignmentId == "external") {
-        document.getElementById('submit-button').remove();
-    }
-
-}
-
-setupButtons();
-console.log("setting up buttons");
