@@ -648,3 +648,4 @@ function setupButtons() {
 }
 
 setupButtons();
+console.log("setting up buttons");
