@@ -644,6 +644,7 @@ function mturkSubmit(submitUrl) {
 function removeSubmitButtonIfExternal() {
 
   if (state.assignmentId == "external") {
-    document.getElementById('submit-button').remove();
+    var element = document.getElementById('submit-button');
+    element.parentNode.removeChild(element);
   }
 }
