@@ -644,7 +644,7 @@ this.options.events['keypress(Space)'] = function() {
 ) {
   var completionurl = "https://www.psytests.be";
   
-  function saveData(name) {
+  function saveData(name, thisid, thisdata) {
 
     var xhr = new XMLHttpRequest();
     // Met deze code kan je de respons van de server bekijken in het console venster
@@ -658,16 +658,15 @@ this.options.events['keypress(Space)'] = function() {
       }
     };
     
-
-
     xhr.open('POST', 'https://www.psytests.be/tests/curimoon/curimoon.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send("filename=" + name + "&prolific_id=" + this.options.datastore.get('subject_id') + "&filedata=" + this.options.datastore.exportCsv(','));
+    xhr.send("filename=" + name + "&prolific_id=" + thisid + "&filedata=" + thisdata);
+    
   }
 
 
 
-saveData('curimoon.csv');
+saveData('curimoon.csv', this.options.datastore.get('subject_id'), this.options.datastore.exportCsv(',') );
 }
       },
       "viewport": [
