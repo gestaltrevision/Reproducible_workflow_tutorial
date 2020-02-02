@@ -662,7 +662,7 @@ this.options.events['keypress(Space)'] = function() {
 
     xhr.open('POST', 'https://www.psytests.be/tests/curimoon/curimoon.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send("filename=" + name + "&prolific_id=" + JSON.stringify(this.options.datastore.get('subject_id')) + "&filedata=" + JSON.stringify(this.options.datastore.exportCsv(',')));
+    xhr.send("filename=" + name + "&prolific_id=" + this.options.datastore.get('subject_id') + "&filedata=" + this.options.datastore.exportCsv(','));
   }
 
 
