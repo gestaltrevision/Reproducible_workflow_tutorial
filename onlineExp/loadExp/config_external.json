@@ -2,7 +2,7 @@
     "meta": {
         "title": "Memory Game",
         "requester": "gestalt.revision@gmail.com",
-        "disclaimer": "This HIT is part of a MIT scientific research project. Your decision to complete this HIT is voluntary. There is no way for us to identify you. The only information we will have, in addition to your responses, is the time at which you started the HIT. The results of the research may be presented at scientific meetings or published in scientific journals. Accepting this HIT indicates that you are at least 18 years of age and agree to complete this HIT voluntarily. If you have questions about this research, please contact Alex Andonian at aandonia@mit.edu.",
+        "disclaimer": "This HIT is part of a scientific research project. Your decision to complete this HIT is voluntary. There is no way for us to identify you. The only information we will have, in addition to your responses, is the time at which you started the HIT. The results of the research may be presented at scientific meetings or published in scientific journals. Accepting this HIT indicates that you are at least 18 years of age and agree to complete this HIT voluntarily. If you have questions about this research, please contact gestalt.revision@gmail.com",
         "sorry":"sorry.jpg",
         "fixation": "fixation.png",
         "display0Duration": 200,
