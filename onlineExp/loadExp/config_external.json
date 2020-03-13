@@ -1,0 +1,95 @@
+{
+    "meta": {
+        "title": "Memory Game",
+        "requester": "gestalt.revision@gmail.com",
+        "disclaimer": "This HIT is part of a MIT scientific research project. Your decision to complete this HIT is voluntary. There is no way for us to identify you. The only information we will have, in addition to your responses, is the time at which you started the HIT. The results of the research may be presented at scientific meetings or published in scientific journals. Accepting this HIT indicates that you are at least 18 years of age and agree to complete this HIT voluntarily. If you have questions about this research, please contact Alex Andonian at aandonia@mit.edu.",
+        "sorry":"sorry.jpg",
+        "fixation": "fixation.png",
+        "display0Duration": 200,
+        "display1Duration": 5000,
+        "imageDurationSTM": 600,
+        "imageDurationLTM": 600,
+        "blankDuration": 500,
+        "countDownDuration": 1000,
+        "countDownStart": 3
+    },
+    "instructions":{
+        "STM": {
+            "description": "This memory game is part of a study by cognitive scientists. There are two parts. In Part I, you will very briefly see a display with four colored squares. Next, you will see an image. <b>Try to remember the image</b> as well as you can. We will test your memory for the images in Part II. After the image has disappeared, you will see one of the squares again in its original location. Please indicate if you think this square is the same or a different color as before. In the example above, the bottom-right square has changed color from green to yellow. Part I consists of X such squares-image-square trials.",
+            "simple": "Please read the guidelines below carefully.",
+            "steps": [
+                "Press the F-key when you think the square has a DIFFERENT color than before.",
+                "Press the J-key when you think the square still has the SAME color as before.",
+                "If you were correct, the frame around the task will briefly turn green. If you were incorrect, it will briefly turn red.",
+                "Don't worry if you find it difficult, it's meant to be. Just give us your best shot! You will get better at it as you go.",
+                "In between the displays, please fixate your eyes on the little circle in the centre of the screen (see example above)."
+
+            ],
+            "final_notes": "Remember that it is equally important to pay close attention to the image! In addition to detecting changes in the squares, your goal is also to still recognize as many images as you can in Part II. More detailed instructions for Part II will follow after you complete Part I.",
+            "images": [],
+            "oneliner": "Press F for DIFFERENT and J for SAME",
+            "identifier": "Please enter a digit between 0 and 4. Then click Continue."
+        },
+        "LTM": {
+            "description": "Good job, now it's time for Part II! Do you still remember which images you saw? You will now see them again, one by one, but intermixed with new images. Your task is to indicate, for each image, if you think it is one you already saw in Part I.",
+            "simple": "Please read the guidelines below carefully.",
+            "steps": [
+                "Press the F-key when you think the image was already shown in Part I, aka an old image.",
+                "Press the J-key when you think the image is new.",
+                "If you were correct, the frame around the task will briefly turn green. If you were incorrect, it will briefly turn red.",
+                "In between the displays, please fixate your eyes on the little circle in the centre of the screen (see example above)."
+            ],
+            "final_notes": "",
+            "images": [],
+            "oneliner": "Press F for OLD and J for NEW",
+            "prompt": "OLD (F-key) or NEW (J-key)?",
+            "identifier": "Please enter a digit between 0 and 4. Then click Continue."
+        }
+    },
+
+    "prerequisites": {
+        "simple": "",
+        "steps": [
+            "You are working on a desktop or laptop, not on a phone or a tablet.",
+            "You have normal or corrected-to-normal vision."
+        ]
+    },
+    "endText": {
+        "instructions":[
+            "The 'Keep playing' button will take you back to the instruction page, from where you can launch a new series. <br>",
+            "The same reward rate will be applied. We will pay you the rewards for additional series through a bonus. <br>",
+            "To finish the game and collect your rewards, <b> be sure to submit</b>! We can only pay you if we have a submission. In the unlikely event of something preventing you from submitting (e.g., you closed the window by mistake, there is an error, etc.), please contact the requester at giga.sun.db@gmail.com and we will see what we can do. A screenshot of the page always helps in those scenarios.",
+            "You can keep going until the 'Keep playing' button becomes disabled. <br>",
+            "If you want to take a break and do more later, it is best to submit. You can then accept another one of our HITs later. <br>",
+            "Remember that in addition to detecting the repeats, it is also important to avoid the non-repeats as much as possible! <br>"
+        ]
+    },
+    "sorryText":{
+        "no_more_hits": {
+            "first": "Thank you for your interest in our study.  You have already completed your maximum number of HITs for this batch.  Unfortunately, you can no longer participate.  Please return the HIT.",
+            "later": "Thank you for your interest in our study.  You have already completed your maximum number of memory series.  Unfortunately, you can no longer participate.  Please submit the HIT."
+        },
+        "running": {
+            "first": "ERROR - We think you might already have another one of our memory series running.  You can only play one series at a time.  Please return the HIT.  If this is not the case, we apologize for the inconvenience.  If you would still like to participate, you can wait a couple of minutes (at least 5) and try another HIT of our batch.",
+            "later": "ERROR - We think you might already have another one of our memory series running.  You can only play one series at a time.  Please submit the HIT.  If this is not the case, we apologize for the inconvenience.  If you would still like to complete more series, you can accept another HIT of our batch after submitting the current one and waiting for a couple of minutes (at least 5) ."
+        },
+        "error": {
+            "first": "ERROR - Oops, it looks like something went wrong.  Please return the HIT.  We apologize for this inconvenience.  If you wish, you can wait a couple of minutes (at least 5) and try another one of our batch.  If the problem persists, please contact the requester.",
+            "later":"ERROR - Oops, it looks like something went wrong. Please check your internet connection first.  Then try if you can submit the HIT so we can make sure you get paid. If not, please contact the requester."
+        },
+        "phone": {
+            "fist": "ERROR - Sorry, we think you might be on a phone or a tablet. Unfortunately, you can only participate if you are working on a desktop or laptop. Please return the HIT.",
+            "later": "ERROR - Sorry, we think you might be on a phone or a tablet. Unfortunately, you can only participate if you are working on a desktop or laptop. Please submit the HIT."
+        }
+    },
+    "maintenanceText": "'Keep playing' unavailable at the moment due to maintenance work, our apologies. Please submit.",
+    "images":{"baseUrl":"/images/"},
+    "displays":{"baseUrl": "/displays/"},
+    "hitCreation": {
+        "rewardAmount": 2
+    },
+    "advanced": {
+        "serverUrl": "http://lgoetsch.pythonanywhere.com/",
+        "trialFeedback":false
+    }
+}
