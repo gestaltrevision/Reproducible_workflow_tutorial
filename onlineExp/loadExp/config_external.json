@@ -20,7 +20,6 @@
             "steps": [
                 "Press the F-key when you think the square has a DIFFERENT color than before.",
                 "Press the J-key when you think the square still has the SAME color as before.",
-                "If you were correct, the frame around the task will briefly turn green. If you were incorrect, it will briefly turn red.",
                 "Don't worry if you find it difficult, it's meant to be. Just give us your best shot! You will get better at it as you go.",
                 "In between the displays, please fixate your eyes on the little circle in the centre of the screen (see example above)."
 
@@ -28,7 +27,7 @@
             "final_notes": "Remember that it is equally important to pay close attention to the image! In addition to detecting changes in the squares, your goal is also to still recognize as many images as you can in Part II. More detailed instructions for Part II will follow after you complete Part I.",
             "images": [],
             "oneliner": "Press F for DIFFERENT and J for SAME",
-            "identifier": "Please enter a digit between 0 and 4. Then click Continue."
+            "identifier": "Please create a participation code by taking the first letter of your name, the first letter of your mother's name, the first letter of your father's name, and the last digit of your house number. If you have participated before, please use the same code again. Enter it below, then click Continue."
         },
         "LTM": {
             "description": "Good job, now it's time for Part II! Do you still remember which images you saw? You will now see them again, one by one, but intermixed with new images. Your task is to indicate, for each image, if you think it is one you already saw in Part I.",
@@ -36,14 +35,13 @@
             "steps": [
                 "Press the F-key when you think the image was already shown in Part I, aka an old image.",
                 "Press the J-key when you think the image is new.",
-                "If you were correct, the frame around the task will briefly turn green. If you were incorrect, it will briefly turn red.",
-                "In between the displays, please fixate your eyes on the little circle in the centre of the screen (see example above)."
+                "In between the images, please fixate your eyes on the little circle in the centre of the screen."
             ],
             "final_notes": "",
             "images": [],
             "oneliner": "Press F for OLD and J for NEW",
             "prompt": "OLD (F-key) or NEW (J-key)?",
-            "identifier": "Please enter a digit between 0 and 4. Then click Continue."
+            "identifier": "Please create a participation code by taking the first letter of your name, the first letter of your mother's name, the first letter of your father's name, and the last digit of your house number. If you have participated before, please use the same code. Enter it below, then click Continue."
         }
     },
 
@@ -57,11 +55,11 @@
     "endText": {
         "instructions":[
             "The 'Keep playing' button will take you back to the instruction page, from where you can launch a new series. <br>",
+			"Note that none of the images you saw in the current series will ever return in any future series. <br>",
             "The same reward rate will be applied. We will pay you the rewards for additional series through a bonus. <br>",
             "To finish the game and collect your rewards, <b> be sure to submit</b>! We can only pay you if we have a submission. In the unlikely event of something preventing you from submitting (e.g., you closed the window by mistake, there is an error, etc.), please contact the requester at giga.sun.db@gmail.com and we will see what we can do. A screenshot of the page always helps in those scenarios.",
             "You can keep going until the 'Keep playing' button becomes disabled. <br>",
-            "If you want to take a break and do more later, it is best to submit. You can then accept another one of our HITs later. <br>",
-            "Remember that in addition to detecting the repeats, it is also important to avoid the non-repeats as much as possible! <br>"
+            "If you want to take a break and do more later, it is best to submit. You can then accept another one of our HITs later. <br>"
         ]
     },
     "sorryText":{
@@ -89,7 +87,7 @@
         "rewardAmount": 2
     },
     "advanced": {
-        "serverUrl": "https://lgoetsch.pythonanywhere.com/",
+        "serverUrl": "http://127.0.0.1:7000/",
         "trialFeedback":false
     }
 }
