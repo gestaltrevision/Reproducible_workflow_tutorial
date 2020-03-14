@@ -548,7 +548,7 @@ function initializeRun() {
 
 function showSorry(text_first, text_later){
 
-    if (sessionStorage.runInSession!==0){
+    if (JSON.parse(sessionStorage.runInSession)!==0){
         // Make sure they can still submit previous runs within current session
         console.log("rescue operation")
         $("#rescue-button").removeClass("disabled");
