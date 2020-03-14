@@ -87,7 +87,7 @@
         "rewardAmount": 2
     },
     "advanced": {
-        "serverUrl": "http://127.0.0.1:7000/",
+        "serverUrl": "https://LGoetsch.pythonanywhere.com",
         "trialFeedback":false
     }
 }
