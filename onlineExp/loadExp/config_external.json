@@ -87,7 +87,7 @@
         "rewardAmount": 2
     },
     "advanced": {
-        "serverUrl": "https://LGoetsch.pythonanywhere.com",
+        "serverUrl": "https://LGoetsch.pythonanywhere.com/",
         "trialFeedback":false
     }
 }
