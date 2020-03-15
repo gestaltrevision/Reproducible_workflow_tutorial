@@ -15,7 +15,7 @@
     },
     "instructions":{
         "STM": {
-            "description": "This memory game is part of a study by cognitive scientists. There are two parts. In Part I, you will very briefly see a display with four colored squares. Next, you will see an image. <b>Try to remember the image</b> as well as you can. We will test your memory for the images in Part II. After the image has disappeared, you will see one of the squares again in its original location. Please indicate if you think this square is the same or a different color as before. In the example above, the bottom-right square has changed color from green to yellow. Part I consists of X such squares-image-square trials.",
+            "description": "This 10-15 minute memory game is part of a study by cognitive scientists. There are two parts. In Part I, you will very briefly see a display with four colored squares. Next, you will see an image. <b>Try to remember the image</b> as well as you can. We will test your memory for the images in Part II. After the image has disappeared, you will see one of the squares again in its original location. Please indicate if you think this square is the same or a different color as before. In the example above, the bottom-right square has changed color from green to yellow. Part I consists of 80 such squares-image-square trials.",
             "simple": "Please read the guidelines below carefully.",
             "steps": [
                 "Press the F-key when you think the square has a DIFFERENT color than before.",
