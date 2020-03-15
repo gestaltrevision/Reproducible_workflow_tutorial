@@ -133,7 +133,7 @@ function computeScoreSTM(){
             numCorrectSTM++;
         }
     }
-    var scoreSTM = Math.ceil(100*numCorrectSTM/state.responseSTM.length).toString();
+    var scoreSTM = Math.round(100*numCorrectSTM/state.responseSTM.length).toString();
 
     return (scoreSTM);
 }
@@ -148,7 +148,7 @@ function computeScoreLTM(){
             numCorrectLTM++;
         }
     }
-    var scoreLTM = Math.ceil(100*numCorrectLTM/state.responseLTM.length).toString();
+    var scoreLTM = Math.round(100*numCorrectLTM/state.responseLTM.length).toString();
     console.log(numCorrectLTM);
 
     return (scoreLTM);
@@ -590,12 +590,12 @@ function preload() {
         imagesLTM[i] = new Image();
         imagesLTM[i].src = runInfo.image_file_LTM[i];
         $("#progress-bar").css('width', String(100 * (i + runInfo.condition_STM.length + 1) / progressBarLength) + "%");
-        $("#progress_text").html(String(Math.ceil(100 * (i + runInfo.condition_STM.length + 1) /progressBarLength) + "%"));
+        $("#progress_text").html(String(Math.round(100 * (i + runInfo.condition_STM.length + 1) /progressBarLength) + "%"));
     }
 
     fixation.src = config.meta.fixation;
     $("#progress-bar").css('width', String(100 * (progressBarLength) / progressBarLength) + "%");
-    $("#progress_text").html(String(Math.ceil(100 * (progressBarLength) /progressBarLength) + "%"));
+    $("#progress_text").html(String(Math.round(100 * (progressBarLength) /progressBarLength) + "%"));
 
     return $.get("").then(function () {
         return;
@@ -727,8 +727,8 @@ function finishRun() {
         console.log(response);
 
         // compute scores
-        var scoreSTM = Math.ceil(response["prop_correct_stm"]*100).toString() + "%";
-        var scoreLTM = Math.ceil(response["prop_correct_ltm"]*100).toString() + "%";
+        var scoreSTM = Math.round(response["prop_correct_stm"]*100).toString() + "%";
+        var scoreLTM = Math.round(response["prop_correct_ltm"]*100).toString() + "%";
         document.getElementById("score-STM").innerHTML = scoreSTM;
         document.getElementById("score-LTM").innerHTML = scoreLTM;
 
