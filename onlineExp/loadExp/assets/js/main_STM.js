@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------------------------------------------
 /* GLOBAL */
-const DEBUG = true;
+const DEBUG = false;
 const DEV = getMedium() === "mturk_sandbox"; // if sandbox is in the URL, we are in developer (DEV) mode
 
 var config = {}; // general experiment configurations
