@@ -34,7 +34,7 @@
                 <p id="desc-STM"></p>
 
                 <h3 style="margin-bottom: 6px">Guidelines:</h3>
-                <p class="instructions-simple-STM" style="margin-bottom: 6px"></p>
+                <p id ="instructions-simple-STM" style="margin-bottom: 6px"></p>
                 <ol id=instruction-steps-STM class="instructions-steps-STM">
                 </ol>
                 <p class="instructions-final-notes-STM" style="font-weight: bold"></p>
@@ -45,20 +45,45 @@
                 </ol>
                 <p class="identifier-STM" style="margin-top: 30px; margin-bottom:0px"></p>
 
-
-                <div class="ui primary button right floated instruction-button">Continue</div>
                   <div id="idcode-field" class="field">
                         <label>
 
                         </label>
                         <textarea id="idcode-text" rows="2"></textarea>
-                    </div>
-
-                <div id = "accept_first-STM" style="color: red"></div>
+                  </div>
+                <div class="ui primary button right floated instruction-button">Continue</div>
             </div>
         </div>
         <div class="ui divider" style="margin-top: 30px; margin-bottom: 0px"></div>
         <div id="disclaimer-box5" class="left aligned sixteen wide column"  style="font-size: 12px; color: slategrey">
+            <p class="disclaimer"></p>
+        </div>
+    </div>
+
+    <!--Informed consent page-->
+    <div id="consent" class="ui top aligned centered grid">
+        <div class="row">
+            <div class="left aligned fourteen wide column">
+                <h3 style="margin-bottom: 12px">Informed consent</h3>
+                <p id="desc-consent"></p>
+                <p id ="consent-simple" style="margin-bottom: 6px"></p>
+                <ol id="consent-steps" style="margin-top: 6px">
+                </ol>
+                <div class="row" style="overflow:auto;">
+                    <input type="checkbox" id="agree" name="agree" style="float: left;display: inline-block;margin-top:5px">
+                    <label for="agree" style="float: left;display: inline-block;width: 80%; margin-left:10px";>
+                        <span style="float: left;font-weight: bold;">I agree.</span>
+                        <span style="color:red; font-size: smaller; float: left">* (* required)</span></label><br>
+                    <input type="checkbox" id="debrief" name="debrief" style="float: left;display: inline-block;margin-top:5px">
+                    <label id = "debrief-label" for="debrief" style="float: left;display: inline-block;width: 80%; margin-left:10px;"> </label><br>
+                </div>
+                <div class="row">
+                    <div id="agree-button" class="ui primary button right floated instruction-button">Continue</div>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider" style="margin-top: 30px; margin-bottom: 0px"></div>
+        <div class="left aligned sixteen wide column"  style="font-size: 12px; color: slategrey">
             <p class="disclaimer"></p>
         </div>
     </div>
@@ -70,7 +95,7 @@
                 <p id="desc-LTM"></p>
 
                 <h3 style="margin-bottom: 6px">Guidelines:</h3>
-                <p class="instructions-simple-LTM" style="margin-bottom: 6px"></p>
+                <p id ="instructions-simple-LTM" style="margin-bottom: 6px"></p>
                 <ol id=instruction-steps-LTM class="instructions-steps-LTM">
                 </ol>
                 <p class="instructions-final-notes-LTM" style="font-weight: bold"></p>

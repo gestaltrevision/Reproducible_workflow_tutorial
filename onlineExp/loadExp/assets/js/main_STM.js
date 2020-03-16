@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------------------------------------------
 /* GLOBAL */
-const DEBUG = false;
+const DEBUG = true;
 const DEV = getMedium() === "mturk_sandbox"; // if sandbox is in the URL, we are in developer (DEV) mode
 
 var config = {}; // general experiment configurations
@@ -34,9 +34,12 @@ var listeningLTM = false; // consequences given to response key presses
 The sessionStorage object stores data for only one session (the data is deleted when the browser tab is closed).
  Using it here for parameters we need to preserve across runs within a sessions**/
 if (!sessionStorage.assignmentId || sessionStorage.assignmentId != state.assignmentId) {
-    // if there is no assignmentId yet or it has changed, it means worker is running a new HIT, means reset
+    // if there is no assignmentId yet or it has changed, it means worker is running a new HIT (or switched from
+    // preview to real), means reset
     console.log("resetting sessionStorage properties");
-    sessionStorage.runInSession = JSON.stringify(0);;
+    sessionStorage.consent = JSON.stringify(false);
+    sessionStorage.debrief = JSON.stringify(false);
+    sessionStorage.runInSession = JSON.stringify(0);
     sessionStorage.assignmentId = JSON.stringify(state.assignmentId);
     sessionStorage.bonusEarned = JSON.stringify(0);
     sessionStorage.sessionData = JSON.stringify([]);
@@ -114,6 +117,7 @@ function blinkBorder(color, elementId, ms) {
 
 function hideAllExcept(page){
     $("#experiment").css("display", "none");
+    $("#consent").css("display", "none");
     $("#loadingImages").css("display", "none");
     $("#instructionsSTM").css("display", "none");
     $("#instructionsLTM").css("display", "none");
@@ -180,7 +184,7 @@ function drawSquares(elementId, coordinates, colors) {
 
 //------------------------------------------------------------------------------------------------------------------
 /* SETTING UP PAGE ELEMENTS*/
-function populateMetadata(config) {
+function populateTextFields(config) {
     $("#normal-title").html(config.meta.title);
     $("#requester-details").html("Requester: "+config.meta.requester);
     console.log(config.meta.title);
@@ -233,6 +237,19 @@ function populateMetadata(config) {
     // Add identifier instructions (participation code they need to enter)
     $(".identifier-STM").html(config.instructions.STM.identifier);
 
+    // Populate text on informed consent page
+    $("#desc-consent").html(config.consent.description);
+    $("#consent-simple").html(config.consent.simple);
+    $("#debrief-label").html(config.consent.debrief);
+
+    for (var i = 0; i < config.consent.steps.length; i++){
+        var node = document.createElement("LI");
+        node.innerHTML = config.consent.steps[i];
+        node.style.marginBottom = "5px";
+        document.getElementById("consent-steps").appendChild(node);
+    }
+
+
     // Populate text on endScreen
     for (var i = 0; i < config.endText.instructions.length; i++) {
         var node = document.createElement("LI");
@@ -269,6 +286,18 @@ function setupButtons() {
         }
 
         });
+
+    // Informed consent
+    $("#agree-button").addClass("disabled");
+    $("#agree-button").click(function(){
+        if (isPreview()) {
+            $("#submit-button").remove();
+            initializePreview();
+        } else {
+            // Initialize Run
+            initializeRun();
+        }
+    });
 
     // Start button that is shown after images have been load, will start first trial
     $("#start-button").addClass("disabled");
@@ -308,6 +337,27 @@ function setupButtons() {
 
     // When worker does not want to complete more runs
     $("#no-more-button").click(function(){hideAllExcept("submitPage");});
+}
+
+function setupChecboxes(){
+    $("#agree").click(function(){
+        if ($("#agree").is(":checked")){
+            $("#agree-button").removeClass("disabled");
+            sessionStorage.consent = JSON.stringify(true);
+        }
+        else{
+            $("#agree-button").addClass("disabled");
+            sessionStorage.consent = JSON.stringify(false);
+        }
+    });
+
+    $("#debrief").click(function () {
+        if ($("#debrief").is(":checked")) {
+            sessionStorage.debrief = JSON.stringify(true);
+        } else {
+            sessionStorage.debrief = JSON.stringify(false);
+        }
+    });
 }
 
 //------------------------------------------------------------------------------------------------------------------
@@ -495,13 +545,19 @@ function setupExperiment() {
         showSorry(config.sorry.phone.first, config.sorry.later)
 
     } else {
-        // Check if it's a preview
-        if (isPreview()) {
-            $("#submit-button").remove();
-            initializePreview();
-        } else {
-         // Initialize Run
-            initializeRun();
+        // Then ask for consent if first run in session
+        if (JSON.parse(sessionStorage.runInSession)==0){
+            hideAllExcept("consent");
+        }
+        else {
+            // Check if it's a preview
+            if (isPreview()) {
+                $("#submit-button").remove();
+                initializePreview();
+            } else {
+                // Initialize Run
+                initializeRun();
+            }
         }
     }
 }
@@ -693,7 +749,9 @@ function finishRun() {
         responseLTM: state.responseLTM,
         preview: preview,
         timestamp: runInfo.timestamp,
-        medium: state.medium
+        medium: state.medium,
+        debrief: JSON.parse(sessionStorage.debrief),
+        consent: JSON.parse(sessionStorage.consent)
     }
 
     // Update sessionData
@@ -793,8 +851,9 @@ $(document).ready(function () {
         hideAllExcept("instructionsSTM");
         document.addEventListener("keydown", processKeyDown);
         document.addEventListener("keyup", processKeyUp);
-        populateMetadata(config);
-        setupButtons(config);
+        populateTextFields(config);
+        setupButtons();
+        setupChecboxes();
         setCanvasBackground("display", "#a6a6a6");
     });
 });
