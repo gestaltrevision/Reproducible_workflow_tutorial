@@ -39,6 +39,8 @@ if (!sessionStorage.assignmentId || sessionStorage.assignmentId != state.assignm
     console.log("resetting sessionStorage properties");
     sessionStorage.consent = JSON.stringify(false);
     sessionStorage.debrief = JSON.stringify(false);
+    sessionStorage.gender = ""
+    sessionStorage.age = "";
     sessionStorage.runInSession = JSON.stringify(0);
     sessionStorage.assignmentId = JSON.stringify(state.assignmentId);
     sessionStorage.bonusEarned = JSON.stringify(0);
@@ -291,6 +293,7 @@ function setupButtons() {
     // Informed consent
     $("#agree-button").addClass("disabled");
     $("#agree-button").click(function(){
+        processDemographics();
         if (isPreview()) {
             $("#submit-button").remove();
             initializePreview();
@@ -340,7 +343,7 @@ function setupButtons() {
     $("#no-more-button").click(function(){hideAllExcept("submitPage");});
 }
 
-function setupChecboxes(){
+function setupInputBoxes(){
     $("#agree").click(function(){
         if ($("#agree").is(":checked")){
             $("#agree-button").removeClass("disabled");
@@ -359,10 +362,22 @@ function setupChecboxes(){
             sessionStorage.debrief = JSON.stringify(false);
         }
     });
+
+    $("#secret-age").click(function(){
+        document.getElementById("age").disabled = true;
+        document.getElementById("age").value = "";
+
+    })
+
+    $("#no-secret-age").click(function(){
+        document.getElementById("age").disabled = false;
+        document.getElementById("age").disabled = false;
+    })
+
 }
 
 //------------------------------------------------------------------------------------------------------------------
-/* KEY PRESSES */
+/* Process input */
 function processKeyDown(e) {
 
     // STM phase
@@ -530,6 +545,27 @@ function processKeyUp(e){
             default:
                 return; // Do nothing for the rest
         }
+    }
+}
+
+function getRadioValue(name) {
+    var radioButtons = document.getElementsByName(name);
+
+    for (i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked)
+            return(radioButtons[i].value)
+    }
+    return("")
+}
+
+function processDemographics(){
+    sessionStorage.gender = getRadioValue("gender");
+    var age = getRadioValue("age-radio");
+    if (age == "no-secret"){
+        sessionStorage.age = String(document.getElementById('age').value);
+    }
+    else{
+        sessionStorage.age = "Do not wish to disclose"
     }
 }
 
@@ -752,7 +788,9 @@ function finishRun() {
         timestamp: runInfo.timestamp,
         medium: state.medium,
         debrief: JSON.parse(sessionStorage.debrief),
-        consent: JSON.parse(sessionStorage.consent)
+        consent: JSON.parse(sessionStorage.consent),
+        age: sessionStorage.age,
+        gender: sessionStorage.gender
     }
 
     // Update sessionData
@@ -849,12 +887,13 @@ $(document).ready(function () {
     $.getJSON("config_external.json").done(function (data) {
         console.log("DEV", DEV);
         config = data;
-        hideAllExcept("instructionsSTM");
         document.addEventListener("keydown", processKeyDown);
         document.addEventListener("keyup", processKeyUp);
         populateTextFields(config);
         setupButtons();
-        setupChecboxes();
+        setupInputBoxes();
         setCanvasBackground("display", "#a6a6a6");
+        hideAllExcept("instructionsSTM");
+        document.getElementById("page-not-built").style.display = "none";
     });
 });

@@ -25,9 +25,10 @@
         <p id="requester-details" style="font-size: x-small"></p>
 
     </h1>
+    <div id="page-not-built">Oops, the page could not be built correctly</div>
 
     <!--Instructions page STM-->
-    <div id="instructionsSTM" class="ui top aligned centered grid">
+    <div id="instructionsSTM" class="ui top aligned centered grid" style="display: none">
         <div class="row">
             <div class="left aligned fourteen wide column">
                 <img src="trial_schematic.png" style="width: 400px; display: flex; margin: 20px auto;">
@@ -61,11 +62,35 @@
     </div>
 
     <!--Informed consent page-->
-    <div id="consent" class="ui top aligned centered grid">
+    <div id="consent" class="ui top aligned centered grid" style="display: none">
         <div class="row">
             <div class="left aligned fourteen wide column">
-                <h3 style="margin-bottom: 12px">Informed consent</h3>
                 <p id="desc-consent"></p>
+
+                <h3 style="margin-bottom: 12px">A few demographics</h3>
+                <div style="margin-bottom: 5px">What is your gender?</div>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male" style="margin-right: 5px">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" style="margin-right: 5px">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other" style="margin-right: 5px">Other</label>
+                    <input type="radio" id="secret-gender" name="gender" value="secret">
+                    <label for="secret" style="margin-right: 5px">Do not wish to disclose</label>
+                </div>
+
+                <div style="margin-bottom: 5px; margin-top: 15px">What is your age?</div>
+                <div><input type="radio" id="no-secret-age" name="age-radio" value="no-secret" checked="true">
+                    <label for="secret" style="margin-right: 5px">
+                        <input id = "age" type="number" name="age" value="">
+                    </label>
+                    <input type="radio" id="secret-age" name="age-radio" value="secret">
+                    <label for="other" style="margin-right: 5px">Do not wish to disclose</label>
+                </div>
+
+
+                <h3 style="margin-bottom: 12px">Informed consent</h3>
                 <p id ="consent-simple" style="margin-bottom: 6px"></p>
                 <ol id="consent-steps" style="margin-top: 6px">
                 </ol>
@@ -77,6 +102,7 @@
                     <input type="checkbox" id="debrief" name="debrief" style="float: left;display: inline-block;margin-top:5px">
                     <label id = "debrief-label" for="debrief" style="float: left;display: inline-block;width: 80%; margin-left:10px;"> </label><br>
                 </div>
+
                 <div class="row">
                     <div id="agree-button" class="ui primary button right floated instruction-button">Continue</div>
                 </div>
@@ -189,7 +215,7 @@
     </div>
 
     <!--Main experiment page-->
-    <div id="experiment" class="ui top aligned centered relaxed grid">
+    <div id="experiment" class="ui top aligned centered relaxed grid" style="display: none">
         <div class="row">
             <div class="sixteen wide column">
                 <div id="instructions-oneliner-STM" style="text-align: center;"></div>
