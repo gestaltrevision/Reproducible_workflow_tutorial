@@ -63,8 +63,9 @@ function getMedium(){
      *  participants participating through other media (e.g., received link via email)
      */
     var tmpURL = window.location.href;
-    if (tmpURL.includes("turk")){
-        if (tmpURL.includes("sandbox")){
+
+    if (tmpURL.indexOf('turk') > -1){
+        if (tmpURL.indexOf("sandbox") > -1){
             medium = "mturk_sandbox";
         }
         else {
