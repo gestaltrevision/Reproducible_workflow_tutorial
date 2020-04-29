@@ -8,3 +8,5 @@ Tutorial on tools for a reproducible workflow in experimental psychology, using 
 - [Python for vision research](python_for_visres)
 - [Python for data analysis in psychology](PythoninPsy)
 - [Experiments on the web](onlineExp)
+
+Also check: https://github.com/remayer/WS19_Python_for_Psychologists

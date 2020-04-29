@@ -266,7 +266,7 @@
         ]
       },
       "title": "Trial sequence",
-      "_tab": "Content"
+      "_tab": "Behavior"
     },
     "4": {
       "id": "4",
@@ -587,7 +587,7 @@
             {
               "title": "submitData",
               "message": "after:end",
-              "code": "  var completionurl = \"http://www.psytests.be\";\n  \n  function saveData(name, data) {\n\n    var xhr = new XMLHttpRequest();\n    // Met deze code kan je de respons van de server bekijken in het console venster\n    xhr.onreadystatechange = function () {\n      if (xhr.readyState === 4) {\n        console.log(xhr.response);\n        if (finished){\n          window.location = completionurl;\n        }\n        \n      }\n    }\n    xhr.open('POST', 'https://www.psytests.be/tests/curimoon/curimoon.php');\n    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');\n    xhr.send(\"filename=\" + name + \"&prolific_id=\" + JSON.stringify(data.Store.get('subject_id')) + \"&filedata=\" + JSON.stringify(data));\n  }\n\n  \n\n  saveData('curimoon.csv', data.Store.exportCsv(separator=', '));"
+              "code": " var completionurl = \"https://www.psytests.be\";\n  \n  function saveData(name, thisid, thisdata) {\n\n    var xhr = new XMLHttpRequest();\n    // Met deze code kan je de respons van de server bekijken in het console venster\n    xhr.onreadystatechange = function () {\n      if (xhr.readyState === 4) {\n        console.log(xhr.response);\n        if (finished){\n          window.location = completionurl;\n        }\n        \n      }\n    };\n    \n    xhr.open('POST', 'https://www.psytests.be/tests/curimoon/curimoon.php');\n    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');\n    xhr.send(\"filename=\" + name + \"&prolific_id=\" + thisid + \"&filedata=\" + thisdata);\n    \n  }\n\n\n\nsaveData('curimoon.csv', this.options.datastore.get('subject_id'), this.options.datastore.exportCsv(',') );"
             }
           ]
         ]

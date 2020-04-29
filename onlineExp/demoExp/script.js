@@ -90,8 +90,6 @@ const study = lab.util.fromObject({
   }
 
 this.parameters.subject_id = getParameterByName('PROLIFIC_PID');
-console.log(this.options.datastore.exportJson(','));
-
 }
       },
       "viewport": [
@@ -252,7 +250,18 @@ this.options.events['keypress(Space)'] = function() {
           "width": "450",
           "height": "306"
         },
-    
+        {
+          "mooney": "${ this.files[\"039tt.jpg\"] }",
+          "solution": "${ this.files[\"039gs.jpg\"] }",
+          "width": "400",
+          "height": "301"
+        },
+        {
+          "mooney": "${ this.files[\"112tt.jpg\"] }",
+          "solution": "${ this.files[\"112gs.jpg\"] }",
+          "width": "400",
+          "height": "400"
+        }
       ],
       "sample": {
         "mode": "draw-shuffle"
@@ -642,7 +651,7 @@ this.options.events['keypress(Space)'] = function() {
       "messageHandlers": {
         "after:end": function anonymous(
 ) {
-  var completionurl = "https://www.psytests.be";
+ var completionurl = "https://www.psytests.be";
   
   function saveData(name, thisid, thisdata) {
 
